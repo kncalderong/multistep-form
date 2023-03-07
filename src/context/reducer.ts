@@ -3,18 +3,23 @@ import { AppContextStateType, ReducerPayloadType } from './../types';
 import { initialState } from "./appContext";
 
 
-interface reducerAction {
-  type: ReducerActionKind
-  payload?: ReducerPayloadType
+type ReducerAction<T, P> = {
+  type: T,
+  payload: P
 }
+  
+type ReducerActionsType = 
+  | ReducerAction<ReducerActionKind.FINISH_FORM, {isFinished: boolean}>
 
-const reducer = (state:  AppContextStateType, action: reducerAction): AppContextStateType => {
-  console.log(state);
-  console.log(action);
+
+const reducer = (state:  AppContextStateType, action: ReducerActionsType): AppContextStateType => {
+
   if (action.type === ReducerActionKind.FINISH_FORM) {
+    console.log('action.payload: ', action.payload);
+    
     return {
       ...state,
-      isFinished: true
+      isFinished: action.payload.isFinished
     }
   }
   

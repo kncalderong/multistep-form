@@ -18,7 +18,11 @@ const AppProvider = ({children }: AppProviderProps) => {
   const [state , dispatch] = useReducer(reducer, initialState)
   
   const updateForm = () => {
-    dispatch({type: ReducerActionKind.FINISH_FORM})
+    dispatch({
+      type: ReducerActionKind.FINISH_FORM, payload: {
+        isFinished: true
+      }
+    })
   }
   
   
