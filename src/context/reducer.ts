@@ -1,16 +1,5 @@
-import { ReducerActionKind } from '../types/ReducerActionKind';
-import { AppContextStateType, ReducerPayloadType } from './../types';
-import { initialState } from "./appContext";
 
-
-type ReducerAction<T, P> = {
-  type: T,
-  payload: P
-}
-  
-type ReducerActionsType = 
-  | ReducerAction<ReducerActionKind.FINISH_FORM, {isFinished: boolean}>
-
+import { ReducerActionKind, ReducerActionsType, AppContextStateType } from '../types';
 
 const reducer = (state:  AppContextStateType, action: ReducerActionsType): AppContextStateType => {
 

@@ -1,5 +1,8 @@
-import { ReducerPayloadType } from './ReducerPayload';
+import { ReducerActionKind, ReducerActionsType } from './ReducerTypes';
 import { AppContextStateType } from "./AppState";
-import { AppContextValueType } from "./AppContextValue";
+import { AppContextValueType } from "./AppContext";
 
-export type { AppContextStateType, AppContextValueType, ReducerPayloadType }
+
+
+export type { AppContextStateType, AppContextValueType, ReducerActionsType }
+export {ReducerActionKind}
