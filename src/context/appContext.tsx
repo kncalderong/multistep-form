@@ -1,18 +1,31 @@
-import React, { useContext, createContext, useState } from 'react'
-import { AppContextValue } from '../types/AppContext'
+import React, { useContext, createContext, useState, useReducer } from 'react'
+import { AppContextValueType, AppContextStateType } from '../types'
+import { ReducerActionKind } from '../types/ReducerActions'
+import reducer from './reducer'
 
-const AppContext = createContext<AppContextValue | null>(null)
+
+const AppContext = createContext<AppContextValueType | null>(null)
 
 type AppProviderProps = {
   children: React.ReactNode
 }
 
+export const initialState: AppContextStateType  = {
+  isFinished: false
+}
+
 const AppProvider = ({children }: AppProviderProps) => {
-  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [state , dispatch] = useReducer(reducer, initialState)
+  
+  const updateForm = () => {
+    dispatch({type: ReducerActionKind.FINISH_FORM})
+  }
+  
   
   return (
     <AppContext.Provider value={{
-      isLoading
+      ...state,
+      updateForm
     }}>
       {children}
     </AppContext.Provider>
@@ -20,7 +33,7 @@ const AppProvider = ({children }: AppProviderProps) => {
 }
 
 const useAppContext = () => {
-  return useContext(AppContext) as AppContextValue
+  return useContext(AppContext) as AppContextValueType
 }
 
 export  {AppProvider, useAppContext}

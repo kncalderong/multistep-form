@@ -1,3 +1,5 @@
-export type AppContextValue = {
-  isLoading: boolean
+export type AppContextValueType = {
+  isFinished: boolean,
+  updateForm:()=>void
 }
+
