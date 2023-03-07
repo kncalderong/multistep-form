@@ -1,4 +1,4 @@
-import { ReducerActionKind } from '../types/ReducerActions';
+import { ReducerActionKind } from '../types/ReducerActionKind';
 import { AppContextStateType, ReducerPayloadType } from './../types';
 import { initialState } from "./appContext";
 
