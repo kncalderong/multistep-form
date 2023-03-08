@@ -1,8 +1,13 @@
 import React from 'react'
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import { useAppContext } from '../context/appContext';
+
+
 
 const FormNavbar = () => {
   const isFinhedthis = false
+  console.log('this navbar is rendering');
+    /* const {  } = useAppContext() */
   return (
     <div className='flex gap-4'>
       <NavLink className={({isActive})=>`w-[33px] h-[33px] rounded-full ${isActive ? 'bg-light-blue text-marine-blue ' : 'text-white border-[1px]'} flex justify-center items-center text-sm font-bold  `} to='/'>1</NavLink>

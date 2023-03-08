@@ -1,6 +1,6 @@
-import { ReducerActionKind, ReducerActionsType } from './Reducer';
-import { AppContextStateType } from "./AppState";
-import { AppContextValueType } from "./AppContext";
+import { ReducerActionKind, ReducerActionsType } from './Reducer.type';
+import { AppContextStateType } from "./AppState.type";
+import { AppContextValueType } from "./AppContext.type";
 
 
 

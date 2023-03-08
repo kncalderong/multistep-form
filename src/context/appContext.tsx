@@ -11,7 +11,8 @@ type AppProviderProps = {
 }
 
 export const initialState: AppContextStateType  = {
-  isFinished: false
+  isFinished: false,
+  name: ''
 }
 
 const AppProvider = ({children }: AppProviderProps) => {
@@ -25,11 +26,22 @@ const AppProvider = ({children }: AppProviderProps) => {
     })
   }
   
+  const handleChangeForm = (e: React.ChangeEvent<HTMLInputElement> ) => {
+    dispatch({
+      type: ReducerActionKind.HANDLE_CHANGE_FORM,
+      payload: {
+        name: e.target.name,
+        value: e.target.value
+      }
+    })
+  }
+  
   
   return (
     <AppContext.Provider value={{
       ...state,
-      updateForm
+      updateForm,
+      handleChangeForm
     }}>
       {children}
     </AppContext.Provider>

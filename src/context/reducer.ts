@@ -4,15 +4,19 @@ import { ReducerActionKind, ReducerActionsType, AppContextStateType } from '../t
 const reducer = (state:  AppContextStateType, action: ReducerActionsType): AppContextStateType => {
 
   if (action.type === ReducerActionKind.FINISH_FORM) {
-    console.log('action.payload: ', action.payload);
-    
     return {
       ...state,
       isFinished: action.payload.isFinished
     }
   }
+  if (action.type === ReducerActionKind.HANDLE_CHANGE_FORM) {
+    return {
+      ...state,
+      [action.payload.name] : action.payload.value
+    }
+  }
   
-  throw new Error(`no such action : ${action.type}`);
+  throw new Error(`no such action : ${action}`);
 
 }
 
