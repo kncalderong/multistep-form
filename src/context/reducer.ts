@@ -9,13 +9,6 @@ const reducer = (state:  AppContextStateType, action: ReducerActionsType): AppCo
       isFinished: action.payload.isFinished
     }
   }
-  if (action.type === ReducerActionKind.HANDLE_CHANGE_FORM) {
-    return {
-      ...state,
-      [action.payload.name] : action.payload.value
-    }
-  }
-  
   throw new Error(`no such action : ${action}`);
 
 }
