@@ -5,7 +5,7 @@ import handleChange from '../../utils/handleChange'
 
 const PersonalInfo = () => {
   const [name, setName] = useState<string>('')
-  
+  const {  } = useAppContext()
   
   return (
     <form>
