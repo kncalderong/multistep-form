@@ -11,7 +11,7 @@ const SharedLayoutForm = () => {
       </div>
       <div className='flex flex-col grow' >
         <div className='flex justify-center items-start p-4 grow bg-magnolia'>
-          <div className='bg-white p-4 w-full rounded-[10px] mt-[-89px] ' >
+          <div className='bg-white py-8 px-6 w-full rounded-[10px] mt-[-89px] ' >
             <Outlet />
           </div>
         </div>
