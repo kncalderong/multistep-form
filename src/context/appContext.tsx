@@ -11,24 +11,31 @@ type AppProviderProps = {
 }
 
 export const initialState: AppContextStateType  = {
-  isFinished: false
+  isFinished: false,
+  name: '',
+  email: '',
+  phone: ''
 }
 
 const AppProvider = ({children }: AppProviderProps) => {
   const [state , dispatch] = useReducer(reducer, initialState)
   
-  const updateForm = () => {
+  const updateInfo = (key: string, value: any) => {
     dispatch({
-      type: ReducerActionKind.FINISH_FORM, payload: {
-        isFinished: true
+      type: ReducerActionKind.UPDATE_FORM, payload: {
+        key,
+        value
       }
     })
   }
   
+  console.log('state: ', state);
+  
+  
   return (
     <AppContext.Provider value={{
       ...state,
-      updateForm
+      updateInfo
     }}>
       {children}
     </AppContext.Provider>

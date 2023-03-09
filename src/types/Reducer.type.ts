@@ -1,5 +1,5 @@
 export enum ReducerActionKind {
-  FINISH_FORM = 'FINISH_FORM',
+  UPDATE_FORM = 'UPDATE_FORM',
 }
 
 type ReducerAction<T, P> = {
@@ -8,4 +8,4 @@ type ReducerAction<T, P> = {
 }
   
 export type ReducerActionsType = 
-  | ReducerAction<ReducerActionKind.FINISH_FORM, { isFinished: boolean }>
+  | ReducerAction<ReducerActionKind.UPDATE_FORM, { key: string, value: any}>

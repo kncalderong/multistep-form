@@ -3,10 +3,10 @@ import { ReducerActionKind, ReducerActionsType, AppContextStateType } from '../t
 
 const reducer = (state:  AppContextStateType, action: ReducerActionsType): AppContextStateType => {
 
-  if (action.type === ReducerActionKind.FINISH_FORM) {
+  if (action.type === ReducerActionKind.UPDATE_FORM) {
     return {
       ...state,
-      isFinished: action.payload.isFinished
+      [action.payload.key]: action.payload.value
     }
   }
   throw new Error(`no such action : ${action}`);
