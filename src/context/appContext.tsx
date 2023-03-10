@@ -1,7 +1,9 @@
 import React, { useContext, createContext, useState, useReducer } from 'react'
 import { AppContextValueType, AppContextStateType } from '../types'
 import { ReducerActionKind } from '../types'
+
 import reducer from './reducer'
+import { planOptions } from '../pages/form/SelectPlan'
 
 
 const AppContext = createContext<AppContextValueType | null>(null)
@@ -14,7 +16,9 @@ export const initialState: AppContextStateType  = {
   isFinished: false,
   name: '',
   email: '',
-  phone: ''
+  phone: '',
+  isMothlyPlan: true,
+  selectedPlan: planOptions.arcadeMonth
 }
 
 const AppProvider = ({children }: AppProviderProps) => {

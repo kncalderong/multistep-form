@@ -85,7 +85,7 @@ const PersonalInfo = () => {
     updateInfo('email', email.value)
     updateInfo('phone', phone.value)
     
-    navigate('select-plan')
+    navigate('/select-plan')
   }
   
   return (

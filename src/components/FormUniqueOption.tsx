@@ -6,7 +6,7 @@ type FormUniqueOptionProps = {
   name: string
   price: string
   value: planOptions
-  setFunction: React.Dispatch<React.SetStateAction<planOptions | null>>
+  setFunction: React.Dispatch<React.SetStateAction<planOptions>>
 }
 
 const FormUniqueOption = ({  icon,  isSelected,  name,  price,  value,  setFunction}: FormUniqueOptionProps) => {
@@ -15,9 +15,10 @@ const FormUniqueOption = ({  icon,  isSelected,  name,  price,  value,  setFunct
       <div className='block w-[40px] h-[40px]'>
         <img src={icon} alt="iconArcade" className='w-full' />
       </div>
-      <div className='flex flex-col gap-[6px]' >
+      <div className='flex flex-col gap-[3px]' >
         <p className='text-marine-blue font-medium' >{name}</p>
         <p className='text-cool-gray text-sm' >{price}</p>
+        {(value === planOptions.advancedYear || value === planOptions.arcadeYear || value === planOptions.proYear) && (<p className="text-marine-blue text-xs" >2 months free</p> )}
       </div>
     </div>
   )
