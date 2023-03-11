@@ -11,7 +11,7 @@ type FormUniqueOptionProps = {
 
 const FormUniqueOption = ({  icon,  isSelected,  name,  price,  value,  setFunction}: FormUniqueOptionProps) => {
   return (
-    <div className={`flex px-4 pt-[14px] pb-[18px] justify-start items-center ${isSelected ? 'border-purplish-blue bg-very-light-gray' : 'border-cool-gray bg-white'} rounded-lg border-[1px] gap-[14px] cursor-pointer`} onClick={() => setFunction(value)}>
+    <div className={`flex px-4 pt-[14px] pb-[18px] justify-start items-center ${isSelected ? 'border-purplish-blue bg-very-light-gray' : 'border-light-gray bg-white'} rounded-lg border-[1px] gap-[14px] cursor-pointer`} onClick={() => setFunction(value)}>
       <div className='block w-[40px] h-[40px]'>
         <img src={icon} alt="iconArcade" className='w-full' />
       </div>
