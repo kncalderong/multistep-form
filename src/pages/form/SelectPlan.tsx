@@ -56,11 +56,11 @@ const SelectPlan = () => {
     }    
   }, [isMonthly])
   
-  const runValidations = () => {
+  const runValidations = (url: string) => {
     updateInfo('isMothlyPlan', isMonthly)
     updateInfo('selectedPlan', selectedPlanLocal)
 
-    navigate('/adds-on')
+    navigate(url)
   }
 
   return (
@@ -86,8 +86,8 @@ const SelectPlan = () => {
         </div>
       </div>
       <div className='flex justify-between p-4 items-center'>
-        <div className='text-sm text-cool-gray cursor-pointer' onClick={()=>navigate('/')} >Go Back</div>
-        <div className='w-[97px] h-[40px] bg-marine-blue text-white text-sm flex justify-center items-center rounded-[4px] cursor-pointer' onClick={()=>runValidations()} >Next Step</div>
+        <div className='text-sm text-cool-gray cursor-pointer' onClick={()=>runValidations('/')} >Go Back</div>
+        <div className='w-[97px] h-[40px] bg-marine-blue text-white text-sm flex justify-center items-center rounded-[4px] cursor-pointer' onClick={()=>runValidations('/adds-on')} >Next Step</div>
       </div>
     </div>
   )
