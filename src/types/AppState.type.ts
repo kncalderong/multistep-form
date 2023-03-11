@@ -1,4 +1,6 @@
+import { addsOptions } from './../pages/form/AddsOn';
 import { planOptions } from './../pages/form/SelectPlan';
+
 
 
 export type AppContextStateType = {
@@ -6,6 +8,7 @@ export type AppContextStateType = {
   name: string
   email: string
   phone: string,
-  isMothlyPlan: boolean,
-  selectedPlan: planOptions  
+  isMonthlyPlan: boolean,
+  selectedPlan: planOptions,
+  selectedAddsOn: addsOptions[]  
 }

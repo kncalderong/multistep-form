@@ -17,8 +17,9 @@ export const initialState: AppContextStateType  = {
   name: '',
   email: '',
   phone: '',
-  isMothlyPlan: true,
-  selectedPlan: planOptions.arcadeMonth
+  isMonthlyPlan: true,
+  selectedPlan: planOptions.arcadeMonth,
+  selectedAddsOn: []
 }
 
 const AppProvider = ({children }: AppProviderProps) => {
@@ -34,7 +35,6 @@ const AppProvider = ({children }: AppProviderProps) => {
   }
   
   console.log('state: ', state);
-  
   
   return (
     <AppContext.Provider value={{

@@ -1,9 +1,58 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
+import FormMultipleOptions from '../../components/FormMultipleOptions'
+import { useAppContext } from '../../context/appContext'
+import { useNavigate } from 'react-router-dom'
+
+
+export enum addsOptions {
+  onlineServiceMonthly = 'online-service-monthly',
+  largerStorageMonthly = 'larger-storage-monthly',
+  customizableProfileMonthly = 'customizable-profile-monthly',
+  onlineServiceYearly = 'online-service-yearly',
+  largerStorageYearly = 'larger-storage-yearly',
+  customizableProfileYearly = 'customizable-profile-yearly'
+}
 
 const AddsOn = () => {
+
+  const { isMonthlyPlan, selectedAddsOn, updateInfo } = useAppContext()
+  const [selectedOptions, setSelectedOptions] = useState<addsOptions[]>(selectedAddsOn)
+  const navigate = useNavigate()
+  
+  const updateLocalState = (value: addsOptions) => {
+    setSelectedOptions((prevValue) => {
+      if (selectedOptions.includes(value)) {
+        return prevValue.filter((filterValue) => filterValue !== value)
+      }
+      return [...prevValue, value]
+    })
+  }
+
+  const runValidations = (url: string) => {
+    updateInfo('selectedAddsOn', selectedOptions)
+    navigate(url)
+  }
+  
+
   return (
-    <div>
-      AdsOn
+    <div className='flex flex-col grow' >
+      <div className='flex justify-center items-start p-4 grow bg-magnolia'>
+        <div className='bg-white py-8 px-6 w-full rounded-[10px] mt-[-89px] ' >
+          <form className='flex flex-col'>
+            <h2 className='text-2xl text-marine-blue font-bold mb-2' >Pick adds-ons</h2>
+            <p className='text-cool-gray mb-[22px]' >Add-ons help enhance your gaming experience</p>
+            <div className='flex flex-col gap-3 mb-6' >
+              <FormMultipleOptions description='Access to multiplayer games' name='Online service' isIncluded={isMonthlyPlan ? selectedOptions.includes(addsOptions.onlineServiceMonthly) : selectedOptions.includes(addsOptions.onlineServiceYearly)} price={isMonthlyPlan ? '+$1/mo' : '+$10/yr'} setFunction={updateLocalState} value={isMonthlyPlan ? addsOptions.onlineServiceMonthly : addsOptions.onlineServiceYearly} />
+              <FormMultipleOptions description='Extra 1TB of cloud save' name='Larger storage' isIncluded={isMonthlyPlan ? selectedOptions.includes(addsOptions.largerStorageMonthly) : selectedOptions.includes(addsOptions.largerStorageYearly)} price={isMonthlyPlan ? '+$2/mo' : '+$20/yr'} setFunction={updateLocalState} value={isMonthlyPlan ? addsOptions.largerStorageMonthly : addsOptions.largerStorageYearly } />
+              <FormMultipleOptions description='Custom theme in your profile' name='Customizable profile' isIncluded={isMonthlyPlan ? selectedOptions.includes(addsOptions.customizableProfileMonthly) : selectedOptions.includes(addsOptions.customizableProfileYearly)} price={isMonthlyPlan ? '+$2/mo' : '+$20/yr'} setFunction={updateLocalState} value={isMonthlyPlan ? addsOptions.customizableProfileMonthly : addsOptions.customizableProfileYearly}/>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div className='flex justify-between p-4 items-center'>
+        <div className='text-sm text-cool-gray cursor-pointer' onClick={() => runValidations('/select-plan')} >Go Back</div>
+        <div className='w-[97px] h-[40px] bg-marine-blue text-white text-sm flex justify-center items-center rounded-[4px] cursor-pointer' onClick={() => runValidations('/confirmation')} >Next Step</div>
+      </div>
     </div>
   )
 }
