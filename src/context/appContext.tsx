@@ -34,12 +34,19 @@ const AppProvider = ({children }: AppProviderProps) => {
     })
   }
   
+  const resetState = () => {
+    dispatch({
+      type: ReducerActionKind.RESET_STATE, payload: {}      
+    })
+  }
+  
   console.log('state: ', state);
   
   return (
     <AppContext.Provider value={{
       ...state,
-      updateInfo
+      updateInfo,
+      resetState
     }}>
       {children}
     </AppContext.Provider>

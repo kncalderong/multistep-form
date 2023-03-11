@@ -23,7 +23,7 @@ interface FinalForm {
 
 const Summary = () => {
   const navigate = useNavigate()
-  const { name, phone, email, isMonthlyPlan, selectedAddsOn, selectedPlan, updateInfo } = useAppContext()
+  const { name, phone, email, isMonthlyPlan, selectedAddsOn, selectedPlan, resetState } = useAppContext()
   const [finalForm, setFinalForm] = useState<FinalForm | null>(null)
 
   useEffect(() => {
@@ -51,6 +51,9 @@ const Summary = () => {
   }, [])
 
   const runValidations = (url: string) => {
+    
+    //here the form would be submitted, the context state reset, and navigate to a final thanks message
+    resetState()
     navigate(url)
   }
 
@@ -72,9 +75,9 @@ const Summary = () => {
                   </div>
                   <p className='font-bold text-marine-blue text-sm'> {`$${finalForm.planCost}/${isMonthlyPlan ? 'mo' : 'yr'}`}</p>
                 </div>
-                {finalForm.addOns.map((item: AddOns) => {
+                {finalForm.addOns.map((item: AddOns, idx: number) => {
                   return (
-                    <div className='flex justify-between items-center' >
+                    <div className='flex justify-between items-center' key={idx} >
                       <p className='text-cool-gray text-sm'>{`${capitalize(item.addOn.split('-')[0])} ${item.addOn.split('-')[1]}`}</p>
                       <p className='text-marine-blue text-sm'>{`+$${item.price}/${isMonthlyPlan ? 'mo' : 'yr'}`}</p>
                     </div>)
@@ -91,7 +94,7 @@ const Summary = () => {
       </div>
       <div className='flex justify-between p-4 items-center'>
         <div className='text-sm text-cool-gray cursor-pointer' onClick={() => runValidations('/adds-on')} >Go Back</div>
-        <div className='w-[97px] h-[40px] bg-marine-blue text-white text-sm flex justify-center items-center rounded-[4px] cursor-pointer' onClick={() => runValidations('/confirmation')} >Next Step</div>
+        <div className='w-[97px] h-[40px] bg-purplish-blue text-white text-sm flex justify-center items-center rounded-[4px] cursor-pointer' onClick={() => runValidations('/confirmation')} >Confirm</div>
       </div>
     </div>
   )
