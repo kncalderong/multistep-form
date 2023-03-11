@@ -51,7 +51,7 @@ const AddsOn = () => {
       </div>
       <div className='flex justify-between p-4 items-center'>
         <div className='text-sm text-cool-gray cursor-pointer' onClick={() => runValidations('/select-plan')} >Go Back</div>
-        <div className='w-[97px] h-[40px] bg-marine-blue text-white text-sm flex justify-center items-center rounded-[4px] cursor-pointer' onClick={() => runValidations('/confirmation')} >Next Step</div>
+        <div className='w-[97px] h-[40px] bg-marine-blue text-white text-sm flex justify-center items-center rounded-[4px] cursor-pointer' onClick={() => runValidations('/summary')} >Next Step</div>
       </div>
     </div>
   )
