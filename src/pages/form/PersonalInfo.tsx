@@ -91,10 +91,10 @@ const PersonalInfo = () => {
   return (
 
     <div className='flex flex-col grow' >
-      <div className='flex justify-center items-start p-4 grow bg-magnolia'>
-        <div className='bg-white py-8 px-6 w-full rounded-[10px] mt-[-89px] ' >
+      <div className='flex justify-center items-start p-4 grow bg-magnolia md:pt-[56px] md:bg-white'>
+        <div className='bg-white py-8 px-6 w-full rounded-[10px] mt-[-89px] md:mt-0 md:p-0 md:w-[450px] ' >
           <form className='flex flex-col'>
-            <h2 className='text-2xl text-marine-blue font-bold mb-2' >Personal info</h2>
+            <h2 className='text-2xl text-marine-blue font-bold mb-2 md:text-[32px]' >Personal info</h2>
             <p className='text-cool-gray mb-[22px]' >Please provide your name, email address, and phone number.</p>
             <div className='flex flex-col  gap-4 '>
               <FormInputRow type='text' value={name.value} setValue={setName} label='Name' placeHolder='e.g. Stephen King' name='name' refHook={inputNameRef} showAlert={name.showAlert} alertMessage={name.alertMessage} />
@@ -105,7 +105,7 @@ const PersonalInfo = () => {
         </div>
       </div>
       <div className='flex justify-end p-4 items-center'>
-        <div className='w-[97px] h-[40px] bg-marine-blue text-white text-sm flex justify-center items-center rounded-[4px] cursor-pointer' onClick={()=>runValidations() } >Next Step</div>
+        <div className='w-[97px] h-[40px] md:w-[123px] md:h-[48px] md:text-base md:rounded-lg bg-marine-blue text-white text-sm flex justify-center items-center rounded-[4px] cursor-pointer' onClick={()=>runValidations() } >Next Step</div>
       </div>
     </div>
   )
