@@ -23,7 +23,7 @@ interface FinalForm {
 
 const Summary = () => {
   const navigate = useNavigate()
-  const { name, phone, email, isMonthlyPlan, selectedAddsOn, selectedPlan, resetState } = useAppContext()
+  const { name, phone, email, isMonthlyPlan, selectedAddsOn, selectedPlan, updateInfo, resetState } = useAppContext()
   const [finalForm, setFinalForm] = useState<FinalForm | null>(null)
 
   useEffect(() => {
@@ -54,10 +54,11 @@ const Summary = () => {
     
     //here the form would be submitted, the context state reset, and navigate to a final thanks message
     resetState()
+    updateInfo('isFinished', true)
     navigate(url)
   }
 
-  if (finalForm === null) return
+  if (finalForm === null) return <div></div>
 
   return (
     <div className='flex flex-col grow' >
@@ -93,7 +94,7 @@ const Summary = () => {
         </div>
       </div>
       <div className='flex justify-between p-4 items-center'>
-        <div className='text-sm text-cool-gray cursor-pointer' onClick={() => runValidations('/adds-on')} >Go Back</div>
+        <div className='text-sm text-cool-gray cursor-pointer' onClick={() => navigate('/adds-on')} >Go Back</div>
         <div className='w-[97px] h-[40px] bg-purplish-blue text-white text-sm flex justify-center items-center rounded-[4px] cursor-pointer' onClick={() => runValidations('/confirmation')} >Confirm</div>
       </div>
     </div>
