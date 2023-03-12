@@ -11,7 +11,7 @@ const SharedLayoutForm = () => {
         <div className=' justify-center items-start h-[172px] min-h-[172px] pt-8 flex md:hidden' style={{backgroundImage: `url(${BgMobile})`}} >
           <FormNavbar/>
         </div>
-        <div className='justify-center items-start h-full w-[274px] pt-8 hidden md:flex' style={{backgroundImage: `url(${BgDesktop})`}} >
+        <div className='justify-center items-start h-full w-[274px] pt-8 hidden md:flex md:pt-10 md:justify-start md:px-8' style={{backgroundImage: `url(${BgDesktop})`}} >
           <FormNavbar/>
         </div>
         <Outlet />

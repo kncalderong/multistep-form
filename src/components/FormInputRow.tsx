@@ -22,7 +22,7 @@ const FormInputRow = ({ setValue, value, name, label, placeHolder, type, showAle
           handleChange(e, setValue)
       }}
         ref={refHook}
-        placeholder={placeHolder} className={`border-light-gray rounded-[4px] px-4 py-2 border-[1px] mt-1 w-full ${showAlert ? 'focus:border-strawberry-red' : 'focus:border-purplish-blue'} focus-visible:outline-none text-marine-blue text-[15px] placeholder-cool-gray placeholder:font-medium md:text-base md:py-3 cursor-pointer`} />
+        placeholder={placeHolder} className={`border-light-gray rounded-[4px] px-4 py-2 border-[1px] mt-1 w-full ${showAlert ? 'focus:border-strawberry-red' : 'focus:border-purplish-blue'} focus-visible:outline-none text-marine-blue text-[15px] placeholder-cool-gray placeholder:font-medium md:text-base md:py-3 cursor-pointe md:rounded-lg`} />
       {showAlert && (
         <div className='absolute right-0 text-xs text-strawberry-red font-bold' >
           {alertMessage}
