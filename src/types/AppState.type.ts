@@ -1,7 +1,4 @@
-import { addsOptions } from './../pages/form/AddsOn';
-import { planOptions } from './../pages/form/SelectPlan';
-
-
+import { addsOptions, planOptions } from './Form';
 
 export type AppContextStateType = {
   isFinished: boolean
