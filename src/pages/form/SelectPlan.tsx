@@ -62,8 +62,8 @@ const SelectPlan = () => {
       <div className='flex justify-center items-start p-4 grow bg-magnolia md:pt-[56px] md:bg-white'>
         <div className='bg-white py-8 px-6 w-full rounded-[10px] mt-[-89px] md:mt-0 md:p-0 md:w-[450px]' >
           <form className='flex flex-col'>
-            <h2 className='text-2xl text-marine-blue font-bold mb-2' >Select your plan</h2>
-            <p className='text-cool-gray mb-[22px]' >You have the option of monthly or yearly billing</p>
+            <h2 className='text-2xl text-marine-blue font-bold mb-2 md:text-[32px] md:font-bold md:mb-3' >Select your plan</h2>
+            <p className='text-cool-gray mb-[22px] md:mb-[35px]' >You have the option of monthly or yearly billing</p>
             <div className='flex flex-col gap-3 mb-6 md:flex-row md:mb-8' >
               <FormUniqueOption isSelected={selectedPlanLocal === planOptions.arcadeMonth || selectedPlanLocal === planOptions.arcadeYear} name='Arcade' price={isMonthly ? '$9/mo' : '$90/yr'} icon={iconArcade} setFunction={setSelectedPlanLocal} value={isMonthly ? planOptions.arcadeMonth : planOptions.arcadeYear} />
               <FormUniqueOption isSelected={selectedPlanLocal === planOptions.advancedMonth || selectedPlanLocal === planOptions.advancedYear} name='Advanced' price={isMonthly ? '$12/mo' : '$120/yr'} icon={iconAdvanced} setFunction={setSelectedPlanLocal} value={isMonthly ? planOptions.advancedMonth : planOptions.advancedYear} />
