@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAppContext } from '../../context/appContext'
 import allPrices from '../../utils/allPrices'
-import { addsOptions } from './AddsOn'
-import { planOptions } from './SelectPlan'
 import capitalize from '../../utils/capitalize'
+import { addsOptions, planOptions } from '../../types/Form'
+
 
 type AddOns = {
   addOn: addsOptions,

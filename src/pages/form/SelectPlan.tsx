@@ -5,16 +5,10 @@ import iconPro from '../../assets/images/icon-pro.svg'
 import FormUniqueOption from '../../components/FormUniqueOption'
 import { useAppContext } from '../../context/appContext'
 import { useNavigate } from 'react-router-dom'
+import { planOptions } from '../../types/Form'
 
 
-export enum planOptions {
-  arcadeMonth = 'arcade-month',
-  advancedMonth = 'advanced-month',
-  proMonth = 'pro-month',
-  arcadeYear = 'arcade-year',
-  advancedYear = 'advanced-year',
-  proYear = 'pro-year'
-}
+
 
 const SelectPlan = () => {
 
@@ -65,8 +59,8 @@ const SelectPlan = () => {
 
   return (
     <div className='flex flex-col grow' >
-      <div className='flex justify-center items-start p-4 grow bg-magnolia'>
-        <div className='bg-white py-8 px-6 w-full rounded-[10px] mt-[-89px] ' >
+      <div className='flex justify-center items-start p-4 grow bg-magnolia md:pt-[56px] md:bg-white'>
+        <div className='bg-white py-8 px-6 w-full rounded-[10px] mt-[-89px] md:mt-0 md:p-0 md:w-[450px]' >
           <form className='flex flex-col'>
             <h2 className='text-2xl text-marine-blue font-bold mb-2' >Select your plan</h2>
             <p className='text-cool-gray mb-[22px]' >You have the option of monthly or yearly billing</p>

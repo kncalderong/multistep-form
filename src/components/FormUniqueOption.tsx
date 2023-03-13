@@ -1,4 +1,4 @@
-import { planOptions } from "../pages/form/SelectPlan"
+import { planOptions } from "../types/Form"
 
 type FormUniqueOptionProps = {
   icon: string

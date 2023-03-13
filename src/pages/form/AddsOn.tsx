@@ -2,16 +2,7 @@ import { useState, useEffect } from 'react'
 import FormMultipleOptions from '../../components/FormMultipleOptions'
 import { useAppContext } from '../../context/appContext'
 import { useNavigate } from 'react-router-dom'
-
-
-export enum addsOptions {
-  onlineServiceMonthly = 'online-service-monthly',
-  largerStorageMonthly = 'larger-storage-monthly',
-  customizableProfileMonthly = 'customizable-profile-monthly',
-  onlineServiceYearly = 'online-service-yearly',
-  largerStorageYearly = 'larger-storage-yearly',
-  customizableProfileYearly = 'customizable-profile-yearly'
-}
+import { addsOptions } from '../../types/Form'
 
 const AddsOn = () => {
 

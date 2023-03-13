@@ -1,6 +1,6 @@
 import React from 'react'
-import { addsOptions } from '../pages/form/AddsOn'
 import checkIcon from '../../src/assets/images/icon-checkmark.svg'
+import { addsOptions } from '../types/Form'
 
 type FormMultipleOptionsProps = {
   isIncluded: boolean

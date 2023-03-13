@@ -3,7 +3,8 @@ import { AppContextValueType, AppContextStateType } from '../types'
 import { ReducerActionKind } from '../types'
 
 import reducer from './reducer'
-import { planOptions } from '../pages/form/SelectPlan'
+import { planOptions } from '../types/Form'
+
 
 
 const AppContext = createContext<AppContextValueType | null>(null)

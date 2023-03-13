@@ -1,5 +1,9 @@
 
-const allPrices = {
+type AllPrices = {
+  [index: string ]: number
+}
+
+const allPrices: AllPrices = {
   'online-service-monthly': 1,
   'larger-storage-monthly': 2,
   'customizable-profile-monthly': 2,
